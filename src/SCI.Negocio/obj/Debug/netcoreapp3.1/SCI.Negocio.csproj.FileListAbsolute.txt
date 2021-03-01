@@ -1,4 +1,0 @@
-D:\Projetos\Sistemas\SistemaComercialIntegrado\src\SCI.Negocio\obj\Debug\netcoreapp3.1\SCI.Negocio.csprojAssemblyReference.cache
-D:\Projetos\Sistemas\SistemaComercialIntegrado\src\SCI.Negocio\obj\Debug\netcoreapp3.1\SCI.Negocio.AssemblyInfoInputs.cache
-D:\Projetos\Sistemas\SistemaComercialIntegrado\src\SCI.Negocio\obj\Debug\netcoreapp3.1\SCI.Negocio.AssemblyInfo.cs
-D:\Projetos\Sistemas\SistemaComercialIntegrado\src\SCI.Negocio\obj\Debug\netcoreapp3.1\SCI.Negocio.csproj.CoreCompileInputs.cache
