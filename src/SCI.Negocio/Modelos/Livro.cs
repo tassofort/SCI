@@ -6,10 +6,11 @@ namespace SCI.Negocio.Modelos
 {
     public class Livro : DadosCadComum
     {
+        public string ISBN { get; set; }
         public string Titulo { get; set; }
         public int CategId { get; set; }
         /* EF Relations */
-        public Categ Categoria { get; set; }
+        public Categoria Categoria { get; set; }
         public decimal P_Venda { get; set; }
         public decimal P_Custo { get; set; }
         public decimal Base_Calc { get; set; }
@@ -25,7 +26,7 @@ namespace SCI.Negocio.Modelos
         public int Est_Min { get; set; }
         public int Est_Disp { get; set; }
         public int QtDoac { get; set; }
-        public int QtDons { get; set; }
+        public int QtCons { get; set; }
         public int QtVend { get; set; }
     }
 }
