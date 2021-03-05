@@ -19,3 +19,7 @@ controle de permissão.
 
 MVC Aplicação …
 
+Pacotes:
+Install-Package Microsoft.EntityFrameworkCore -Version 3.1.10
+Install-Package Microsoft.EntityFrameworkCore.SqlServer -Version 3.1.10
+Install-Package Microsoft.EntityFrameworkCore.Tools -Version 3.1.10
