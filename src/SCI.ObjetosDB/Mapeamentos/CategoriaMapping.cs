@@ -13,8 +13,8 @@ namespace SCI.ObjetosDB.Mapeamentos
         {
             builder.ToTable("Categ");
             builder.HasKey(c => c.Id);
-            //builder.Property(c => c.Status).HasColumnType("BIT").HasDefaultValueSql("1").IsRequired();
-            //builder.Property(c => c.Marca).HasColumnType("BIT").HasDefaultValueSql("1").IsRequired();
+            builder.Property(c => c.Status).HasColumnType("BIT").HasDefaultValueSql("1").IsRequired();
+            builder.Property(c => c.Marca).HasColumnType("BIT").HasDefaultValueSql("1").IsRequired();
             builder.Property(c => c.Data_Inc).HasDefaultValueSql("GETDATE()").ValueGeneratedOnAdd().IsRequired();
 
             builder.Property(c => c.Nome).HasColumnType("VARCHAR(25)").IsRequired();
