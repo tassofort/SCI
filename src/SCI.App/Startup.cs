@@ -8,7 +8,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SCI.App.Data;
+using SCI.Negocio.Interfaces;
+using SCI.Negocio.Notificacoes;
 using SCI.ObjetosDB.Conexao;
+using SCI.ObjetosDB.Repositorios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,8 +51,17 @@ namespace SCI.App
                                             .MigrationsHistoryTable("AplicaoSCIMVC")));
             #endregion
 
+            #region AutoMapper
+            services.AddAutoMapper(typeof(Startup));
+            #endregion
+
             #region InjecaoDependencia
+            services.AddControllersWithViews();
+
             services.AddScoped<ConexaoDb>();
+            services.AddScoped<ICategoriaRepositorio, CategoriaRepositorio>();
+
+            services.AddScoped<INotificar, Notificar>();
             #endregion 
         }
 
