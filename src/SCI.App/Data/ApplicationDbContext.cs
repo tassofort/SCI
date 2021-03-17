@@ -13,5 +13,6 @@ namespace SCI.App.Data
             : base(options)
         {
         }
+        public DbSet<SCI.App.ViewModels.LivroViewModel> LivroViewModel { get; set; }
     }
 }

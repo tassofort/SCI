@@ -9,6 +9,7 @@ namespace SCI.App.AutoMapper
         public AutoMapperConfig()
         {
             CreateMap<Categoria, CategoriaViewModel>().ReverseMap();
+            CreateMap<Livro, LivroViewModel>().ReverseMap();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using SCI.Negocio.Modelos.NovosTipos;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using SCI.Negocio.Modelos.NovosTipos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,11 +15,11 @@ namespace SCI.App.ViewModels
         [DisplayName("Código")]
         public int Id { get; set; }
 
-        [DisplayName("Habilitada")]
+        [DisplayName("Habilitar?")]
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public bool Status { get; set; }
 
-        [DisplayName("Marca")]
+        [DisplayName("Marcar?")]
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public bool Marca { get; set; }
         
@@ -37,7 +38,9 @@ namespace SCI.App.ViewModels
         public string Nome { get; set; }
         
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        [StringLength(25, ErrorMessage = "O campo {0} precisa ter entre {2} e {1} caracteres", MinimumLength = 2)]
+        //[StringLength(25, ErrorMessage = "O campo {0} precisa ter entre {2} e {1} caracteres", MinimumLength = 2)]
         public GrupoCategoria Grupo { get; set; }
+
+        //public GrupoCategoria GrupoCategorias { get; set; }
     }
 }

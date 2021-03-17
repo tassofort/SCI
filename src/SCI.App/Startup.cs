@@ -60,6 +60,7 @@ namespace SCI.App
 
             services.AddScoped<ConexaoDb>();
             services.AddScoped<ICategoriaRepositorio, CategoriaRepositorio>();
+            services.AddScoped<ILivroRepositorio, LivroRepositorio>();
 
             services.AddScoped<INotificar, Notificar>();
             #endregion 
