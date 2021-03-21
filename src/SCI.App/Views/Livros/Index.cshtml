@@ -1,0 +1,164 @@
+﻿@model IEnumerable<SCI.App.ViewModels.LivroViewModel>
+
+@{
+    ViewData["Title"] = "Lista de Livros";
+}
+
+<h4 style="padding-top: 50px">@ViewData["Title"]</h4>
+<hr />
+
+<p>
+    <a class="btn btn-info" asp-action="Create">Novo Livro</a>
+</p>
+
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ISBN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.P_Venda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.P_Custo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Base_Calc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Formatado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NPaginas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Edicao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ano)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Peso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Loc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resenha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Capa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Promo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Est_Min)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Est_Disp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtDoac)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtCons)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtVend)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ISBN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categoria.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.P_Venda)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.P_Custo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Base_Calc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Formatado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NPaginas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Edicao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ano)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Peso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Loc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Resenha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Capa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Promo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Est_Min)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Est_Disp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtDoac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtCons)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtVend)
+            </td>
+            <td class="text-right">
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Detalhes </a> |
+                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Editar   </a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Excluir </a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

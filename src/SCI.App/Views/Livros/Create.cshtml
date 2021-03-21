@@ -1,0 +1,135 @@
+﻿@model SCI.App.ViewModels.LivroViewModel
+
+@{
+    ViewData["Title"] = "Novo Livro";
+}
+
+<h4 style="padding-top: 50px">@ViewData["Title"]</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-10">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Status" /> @Html.DisplayNameFor(model => model.Status)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Marca" /> @Html.DisplayNameFor(model => model.Marca)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISBN" class="control-label"></label>
+                <input asp-for="ISBN" class="form-control" />
+                <span asp-validation-for="ISBN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Titulo" class="control-label"></label>
+                <input asp-for="Titulo" class="form-control" />
+                <span asp-validation-for="Titulo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoriaId" class="control-label"></label>
+                <select asp-for="CategoriaId" class="form-control" asp-items="@(new SelectList(Model.Categorias, "Id", "Nome"))">
+                    <option></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="P_Venda" class="control-label"></label>
+                <input asp-for="P_Venda" class="form-control" />
+                <span asp-validation-for="P_Venda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="P_Custo" class="control-label"></label>
+                <input asp-for="P_Custo" class="form-control" />
+                <span asp-validation-for="P_Custo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Base_Calc" class="control-label"></label>
+                <input asp-for="Base_Calc" class="form-control" />
+                <span asp-validation-for="Base_Calc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Formatado" class="control-label"></label>
+                <input asp-for="Formatado" class="form-control" />
+                <span asp-validation-for="Formatado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NPaginas" class="control-label"></label>
+                <input asp-for="NPaginas" class="form-control" />
+                <span asp-validation-for="NPaginas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Edicao" class="control-label"></label>
+                <input asp-for="Edicao" class="form-control" />
+                <span asp-validation-for="Edicao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ano" class="control-label"></label>
+                <input asp-for="Ano" class="form-control" />
+                <span asp-validation-for="Ano" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Peso" class="control-label"></label>
+                <input asp-for="Peso" class="form-control" />
+                <span asp-validation-for="Peso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Loc" class="control-label"></label>
+                <input asp-for="Loc" class="form-control" />
+                <span asp-validation-for="Loc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Resenha" class="control-label"></label>
+                <input asp-for="Resenha" class="form-control" />
+                <span asp-validation-for="Resenha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Capa" class="control-label"></label>
+                <input asp-for="Capa" class="form-control" />
+                <span asp-validation-for="Capa" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Promo" /> @Html.DisplayNameFor(model => model.Promo)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Est_Min" class="control-label"></label>
+                <input asp-for="Est_Min" class="form-control" />
+                <span asp-validation-for="Est_Min" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Est_Disp" class="control-label"></label>
+                <input asp-for="Est_Disp" class="form-control" />
+                <span asp-validation-for="Est_Disp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QtDoac" class="control-label"></label>
+                <input asp-for="QtDoac" class="form-control" />
+                <span asp-validation-for="QtDoac" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QtCons" class="control-label"></label>
+                <input asp-for="QtCons" class="form-control" />
+                <span asp-validation-for="QtCons" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QtVend" class="control-label"></label>
+                <input asp-for="QtVend" class="form-control" />
+                <span asp-validation-for="QtVend" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Cadastrar" class="btn btn-primary" />
+                <a class="btn btn-info" href="javascript:window.history.back();">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
